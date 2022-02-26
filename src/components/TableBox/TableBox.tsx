@@ -16,7 +16,7 @@ const TableBox: React.FC<IProps> = (props) => {
   });
 
   const { items, requestSort, sortConfig } = useSortableData(numberedData);
-  const getClassNamesFor = (name) => {
+  const getClassNamesFor = (name: string) => {
     if (!sortConfig) {
       return;
     }

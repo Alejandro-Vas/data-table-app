@@ -20,16 +20,13 @@ th button {
   background-color: #f1f9ff;
   border: 0;
   border-radius: none;
+  width: 100%;
 }
 
 th button.ascending::after {
   content: '▲';
-  display: inline-block;
-  margin-left: 1em;
 }
 
 th button.descending::after {
   content: '▼';
-  display: inline-block;
-  margin-left: 1em;
 }
