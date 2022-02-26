@@ -9,7 +9,7 @@ const TableRootItem: React.FC<IRandomData> = (props) => {
       <div>
         <h1>{title}</h1>
         {items?.map((el) => (
-          <TableItem items={el.items} title={el.title} />
+          <TableItem items={el.items} title={el.title} key={el.title} />
         ))}
       </div>
     </>

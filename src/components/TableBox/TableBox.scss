@@ -1,0 +1,21 @@
+table,
+th,
+td {
+  border: 1px solid #9cd0ff;
+  border-collapse: collapse;
+}
+
+.table {
+  margin: 0 auto;
+  width: 297px;
+  background-color: #f1f9ff;
+  &__id {
+    width: 30px;
+  }
+  &__title {
+    width: 237px;
+  }
+  &__number {
+    width: 30px;
+  }
+}

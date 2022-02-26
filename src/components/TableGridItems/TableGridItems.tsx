@@ -5,8 +5,8 @@ const TableGridItems: React.FC<ItemsEntity1> = (props) => {
   const { data, dateStart, dateEnd, title, subTitle } = props;
   console.log(data);
   return (
-    <div>
-      <div>sitle: {title}</div>
+    <div className='table-grid-item'>
+      <div>title: {title}</div>
       <div>subtitle: {subTitle}</div>
       <div>dateStart: {dateStart}</div>
       <div>dateEnd: {dateEnd}</div>

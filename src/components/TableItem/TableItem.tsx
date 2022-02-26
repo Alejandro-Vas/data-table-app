@@ -10,7 +10,7 @@ const TableItem: React.FC<IProps> = (props) => {
   const { items, title } = props;
 
   return (
-    <div>
+    <div className='table-item'>
       {items?.map((el) => (
         <TableGridItems
           title={el.title}
@@ -18,6 +18,7 @@ const TableItem: React.FC<IProps> = (props) => {
           dateStart={el.dateStart}
           dateEnd={el.dateEnd}
           data={el.data}
+          key={el.title}
         />
       ))}
     </div>

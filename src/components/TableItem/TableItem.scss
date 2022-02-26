@@ -1,0 +1,5 @@
+.table-item {
+  display: grid;
+  gap: 16px 26px;
+  grid-template-columns: repeat(5, 1fr);
+}
