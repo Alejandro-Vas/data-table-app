@@ -7,13 +7,13 @@ interface IProps {
 const TableBox: React.FC<IProps> = (props) => {
   const { data } = props;
   return (
-    <>
-      <table className='table'>
+    <div className='table'>
+      <table>
         <tbody>
           <tr>
-            <th className='table__id'>#</th>
-            <th className='table__title'>Title</th>
-            <th className='table__number'>Number</th>
+            <th className='table__id table'>#</th>
+            <th className='table__title table'>Title</th>
+            <th className='table__number table '>Number</th>
           </tr>
           {data?.map((el, i) => (
             <tr key={el.title}>
@@ -24,7 +24,7 @@ const TableBox: React.FC<IProps> = (props) => {
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 export default TableBox;

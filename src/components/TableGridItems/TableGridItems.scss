@@ -1,3 +1,14 @@
 .table-grid-item {
+}
+.table-wrapper {
+  height: 67px;
+  width: 297px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  border: 1px solid #2e465c;
+  box-sizing: border-box;
+  border-radius: 2px;
   background-color: #f1f9ff;
 }

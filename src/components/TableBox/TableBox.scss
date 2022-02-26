@@ -1,14 +1,10 @@
-table,
-th,
-td {
-  border: 1px solid #9cd0ff;
-  border-collapse: collapse;
-}
-
 .table {
   margin: 0 auto;
   width: 297px;
   background-color: #f1f9ff;
+  border: 1px solid #2e465c;
+  box-sizing: border-box;
+  border-radius: 2px;
   &__id {
     width: 30px;
   }
