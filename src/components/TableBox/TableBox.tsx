@@ -6,6 +6,14 @@ interface IProps {
 
 const TableBox: React.FC<IProps> = (props) => {
   const { data } = props;
+
+  const numberedData = data?.map((el, i) => {
+    return {
+      id: i + 1,
+      ...el,
+    };
+  });
+
   return (
     <div className='table'>
       <table>
@@ -15,9 +23,9 @@ const TableBox: React.FC<IProps> = (props) => {
             <th className='table__title table'>Title</th>
             <th className='table__number table '>Number</th>
           </tr>
-          {data?.map((el, i) => (
+          {numberedData?.map((el, i) => (
             <tr key={el.title}>
-              <td className='table__id'>{i + 1}</td>
+              <td className='table__id'>{el.id}</td>
               <td className='table__title'>{el.title}</td>
               <td className='table__number'>{el.number} </td>
             </tr>
