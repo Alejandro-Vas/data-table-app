@@ -1,23 +1,11 @@
 import './App.scss';
+import { IRandomData } from '../../interfaces/IRandomData';
+import { randomData } from '../../utils/randomData';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-          <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const data: IRandomData[] = randomData();
+  console.log(data[0].items[0].items[0].dateStart);
+  return <div className='App'></div>;
 }
 
 export default App;
