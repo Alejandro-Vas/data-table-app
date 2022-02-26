@@ -1,11 +1,21 @@
 import './App.scss';
 import { IRandomData } from '../../interfaces/IRandomData';
 import { randomData } from '../../utils/randomData';
+import TableRootItem from '../TableRootItem/TableRootItem';
 
 function App() {
   const data: IRandomData[] = randomData();
-  console.log(data[0].items[0].items[0].dateStart);
-  return <div className='App'></div>;
+
+  return (
+    <div className='App'>
+      {data.map((el) => (
+        <div key={el.title}>
+          <TableRootItem items={el.items} title={el.title} />
+          <hr />
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default App;
