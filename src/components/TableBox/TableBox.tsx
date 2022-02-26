@@ -1,4 +1,5 @@
 import { DataEntity } from '../../interfaces/IRandomData';
+import { useSortableData } from '../../hooks/useSortableData';
 
 interface IProps {
   data: DataEntity[] | null | undefined;
@@ -14,16 +15,48 @@ const TableBox: React.FC<IProps> = (props) => {
     };
   });
 
+  const { items, requestSort, sortConfig } = useSortableData(numberedData);
+  const getClassNamesFor = (name) => {
+    if (!sortConfig) {
+      return;
+    }
+    return sortConfig.key === name ? sortConfig.direction : undefined;
+  };
+
   return (
     <div className='table'>
       <table>
         <tbody>
           <tr>
-            <th className='table__id table'>#</th>
-            <th className='table__title table'>Title</th>
-            <th className='table__number table '>Number</th>
+            <th>
+              <button
+                type='button'
+                onClick={() => requestSort('id')}
+                className={getClassNamesFor('id')}
+              >
+                #
+              </button>
+            </th>
+            <th className='table__title table'>
+              <button
+                type='button'
+                onClick={() => requestSort('title')}
+                className={getClassNamesFor('title')}
+              >
+                Title
+              </button>
+            </th>
+            <th className='table__number table '>
+              <button
+                type='button'
+                onClick={() => requestSort('number')}
+                className={getClassNamesFor('number')}
+              >
+                Number
+              </button>
+            </th>
           </tr>
-          {numberedData?.map((el, i) => (
+          {items?.map((el, i) => (
             <tr key={el.title}>
               <td className='table__id'>{el.id}</td>
               <td className='table__title'>{el.title}</td>
