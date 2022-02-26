@@ -11,6 +11,7 @@ const TableRootItem: React.FC<IRandomData> = (props) => {
         {items?.map((el) => (
           <TableItem items={el.items} title={el.title} key={el.title} />
         ))}
+        <hr />
       </div>
     </>
   );

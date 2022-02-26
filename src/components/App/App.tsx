@@ -4,6 +4,8 @@ import TableRootItem from '../TableRootItem/TableRootItem';
 
 function App() {
   const data: IRandomData[] = randomData();
+  console.log('DATA', data);
+  console.log('DATA', data);
 
   return (
     <div className='App'>
@@ -11,7 +13,6 @@ function App() {
         {data.map((el) => (
           <div key={el.title}>
             <TableRootItem items={el.items} title={el.title} />
-            <hr />
           </div>
         ))}
       </div>
