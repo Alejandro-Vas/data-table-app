@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ItemsEntity1 } from '../../interfaces/IRandomData';
 import TableBox from '../TableBox/TableBox';
+import { dataFormatter } from '../../utils/dateFormatter';
 
 const TableGridItems: React.FC<ItemsEntity1> = (props) => {
   const [show, setShow] = useState(true);
@@ -10,6 +11,7 @@ const TableGridItems: React.FC<ItemsEntity1> = (props) => {
     setShow(!show);
   };
   console.log(data);
+
   return (
     <div className='table-grid-item'>
       <div onClick={handleShowToggle} className='table-wrapper'>
@@ -19,7 +21,7 @@ const TableGridItems: React.FC<ItemsEntity1> = (props) => {
         </div>
         <div className='table-wrapper__item'>
           <div>
-            {dateStart} - {dateEnd}
+            {dataFormatter(dateStart)} - {dataFormatter(dateEnd)}
           </div>
         </div>
       </div>
