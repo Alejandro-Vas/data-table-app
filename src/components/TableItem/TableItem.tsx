@@ -12,14 +12,22 @@ const TableItem: React.FC<IProps> = (props) => {
   const [show, setShow] = useState(false);
 
   const handleShowToggle = () => {
-    setShow(!show); 
+    setShow(!show);
   };
 
   return (
     <div className='table-item-wrapper'>
-      <div className='table-title' onClick={handleShowToggle}>
-        {title}
+      <div className='table-title-wrapper'>
+        <div className='table-title' onClick={handleShowToggle}>
+          {title}
+        </div>
+        <div
+          className={
+            show ? `table-title-line` : `table-title-line display-none`
+          }
+        ></div>
       </div>
+
       <div className={show ? `table-item` : `table-item display-none`}>
         {items?.map((el) => (
           <TableGridItems

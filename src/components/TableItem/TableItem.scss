@@ -13,12 +13,22 @@
   height: 36px;
   color: #ffff;
   background-color: #2e465c;
+  &-line {
+    width: 50%;
+    border-right: 2px solid #999999;
+    height: calc(90% - 36px);
+  }
 }
 .table-item {
   margin-top: 61px;
   display: grid;
   gap: 16px 26px;
   grid-template-columns: repeat(5, 1fr);
+  &-root {
+    margin-top: 61px;
+    gap: 16px 26px;
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .display-none {

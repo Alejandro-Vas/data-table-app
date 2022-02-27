@@ -13,12 +13,19 @@ const TableRootItem: React.FC<IRandomData> = (props) => {
 
   return (
     <>
-      <div className='table-root-item-wrapper'>
-        <div className='table-root-title' onClick={handleShowToggle}>
-          {title}
+      <div className='table-item-wrapper'>
+        <div className='table-title-wrapper'>
+          <div className='table-title' onClick={handleShowToggle}>
+            {title}
+          </div>
+          <div
+            className={
+              show ? `table-title-line` : `table-title-line display-none`
+            }
+          ></div>
         </div>
         <div
-          className={show ? `table-root-item` : `table-root-item display-none`}
+          className={show ? `table-item-root` : `table-item-root display-none`}
         >
           {items?.map((el) => (
             <TableItem items={el.items} title={el.title} key={el.title} />
