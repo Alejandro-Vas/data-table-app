@@ -5,7 +5,6 @@ import TableRootItem from '../TableRootItem/TableRootItem';
 function App() {
   const data: IRandomData[] = randomData();
   console.log('DATA', data);
-  console.log('DATA', data);
 
   return (
     <div className='App'>

@@ -28,7 +28,7 @@ const TableBox: React.FC<IProps> = (props) => {
       <table>
         <tbody>
           <tr>
-            <th>
+            <th className='table__id table'>
               <button
                 type='button'
                 onClick={() => requestSort('id')}

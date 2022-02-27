@@ -4,7 +4,7 @@ import TableBox from '../TableBox/TableBox';
 import { dataFormatter } from '../../utils/dateFormatter';
 
 const TableGridItems: React.FC<ItemsEntity1> = (props) => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const { data, dateStart, dateEnd, title, subTitle } = props;
 
   const handleShowToggle = () => {
