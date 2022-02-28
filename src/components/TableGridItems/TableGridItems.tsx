@@ -16,11 +16,11 @@ const TableGridItems: React.FC<ItemsEntity1> = (props) => {
     <div className='table-grid-item'>
       <div onClick={handleShowToggle} className='table-wrapper'>
         <div className='table-wrapper__item'>
-          <div>{title}</div>
+          <div className='table-wrapper__item_title'>{title}</div>
           <div> {subTitle}</div>
         </div>
         <div className='table-wrapper__item'>
-          <div>
+          <div className='table-wrapper__item_date'>
             {dataFormatter(dateStart)} - {dataFormatter(dateEnd)}
           </div>
         </div>
