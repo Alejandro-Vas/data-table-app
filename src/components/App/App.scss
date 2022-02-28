@@ -1,9 +1,23 @@
-.App {
+.app {
   font-family: 'Roboto';
+
   text-align: center;
+  &-container {
+    display: block;
+    position: relative;
+    text-align: right;
+  }
 }
 
 .container {
   max-width: 1800px;
+  height: 1080px;
   margin: 0 auto;
+}
+
+.search-field {
+  position: sticky;
+  margin-right: 100px;
+  bottom: 100px;
+  z-index: 10;
 }

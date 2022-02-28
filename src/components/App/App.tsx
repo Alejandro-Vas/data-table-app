@@ -10,7 +10,7 @@ interface IProps {
 
 const App: React.FC<IProps> = (props) => {
   const { data } = props;
-  const [searchValue, setSearchValue] = useState('aa');
+  const [searchValue, setSearchValue] = useState('');
 
   const filteredData = data?.filter((el) =>
     el.title.toLowerCase().includes(searchValue.toLowerCase().trim()),
@@ -23,22 +23,25 @@ const App: React.FC<IProps> = (props) => {
   };
 
   return (
-    <div className='App'>
-      <div className='container'>
-        <div>
-          <SearchField
-            handleSearchValueChange={handleSearchValueChange}
-            searchValue={searchValue}
-          />
-        </div>
-
-        {filteredData.map((el) => (
-          <div key={el.title}>
-            <TableRootItem items={el.items} title={el.title} />
+    <>
+      <div className='app'>
+        <div className='app-container'>
+          <div className='container'>
+            {filteredData.map((el) => (
+              <div key={el.title}>
+                <TableRootItem items={el.items} title={el.title} />
+              </div>
+            ))}
           </div>
-        ))}
+          <div className='search-field'>
+            <SearchField
+              handleSearchValueChange={handleSearchValueChange}
+              searchValue={searchValue}
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

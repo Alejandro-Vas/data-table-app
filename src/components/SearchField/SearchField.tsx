@@ -1,3 +1,4 @@
+import { useState } from 'react';
 interface IProps {
   searchValue: string;
   handleSearchValueChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -5,13 +6,22 @@ interface IProps {
 
 const SearchField: React.FC<IProps> = (props) => {
   const { handleSearchValueChange, searchValue } = props;
+  const [show, setShow] = useState(false);
+
+  const handleShowToggle = () => {
+    setShow(!show);
+  };
+
   return (
     <>
-      <input
-        type='search'
-        value={searchValue}
-        onChange={handleSearchValueChange}
-      />
+      <form action=''>
+        <input
+          placeholder='search...'
+          value={searchValue}
+          onChange={handleSearchValueChange}
+        />
+        <i className='fa fa-search' onClick={handleShowToggle} />
+      </form>
     </>
   );
 };
