@@ -13,11 +13,12 @@
   max-width: 1800px;
   height: 1080px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .search-field {
   position: sticky;
-  margin-right: 100px;
+  margin-right: -1400px;
   bottom: 100px;
   z-index: 10;
 }
